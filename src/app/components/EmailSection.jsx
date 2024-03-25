@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
+import { FaFacebook } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -45,7 +46,7 @@ const EmailSection = () => {
       className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
     >
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
-      <div className="z-10">
+      <div>
         <h5 className="text-xl font-bold text-white my-2">
           Let&apos;s Connect
         </h5>
@@ -55,12 +56,15 @@ const EmailSection = () => {
           open. Whether you have a question or just want to say hi, I&apos;ll
           try my best to get back to you!
         </p>
-        <div className="socials flex flex-row gap-2">
+        <div className="socials flex flex-row items-center justify-start gap-2">
           <Link href="https://github.com/Samirun-Shuvo">
             <Image src={GithubIcon} alt="Github Icon" />
           </Link>
           <Link href="https://www.linkedin.com/in/md-samirun-shuvo">
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
+          </Link>
+          <Link href="https://www.facebook.com/samirun.shuvo/">
+            <FaFacebook size="40px" className="text-white" />
           </Link>
         </div>
       </div>

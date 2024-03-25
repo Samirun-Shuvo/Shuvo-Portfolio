@@ -4,8 +4,7 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import heroImg from "../../../public/images/myHeroImg.png";
-// import myCv from "../../../public/images/cv/Md Shuvo Profile Resume.pdf";
+import heroImg from "../../../public/images/myHeroImg.png"; 
 
 const HeroSection = () => {
   return (
