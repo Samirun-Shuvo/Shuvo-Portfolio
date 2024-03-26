@@ -1,5 +1,5 @@
 import React from "react";
-import mylogo from "../../../public/images/mylogo.png";
+import mylogo from "../../public/images/mylogo.png";
 import Link from "next/link";
 import Image from "next/image";
 

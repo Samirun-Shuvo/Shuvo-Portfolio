@@ -5,7 +5,7 @@ import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 import Image from "next/image";
-import mylogo from "../../../public/images/mylogo.png";
+import mylogo from "../../public/images/mylogo.png";
 const navLinks = [
   {
     title: "About",
@@ -18,6 +18,10 @@ const navLinks = [
   {
     title: "Contact",
     path: "#contact",
+  },
+  {
+    title: "Admin",
+    path: "login",
   },
 ];
 
@@ -57,6 +61,7 @@ const Navbar = () => {
                 <NavLink href={link.path} title={link.title} />
               </li>
             ))}
+            
           </ul>
         </div>
       </div>
