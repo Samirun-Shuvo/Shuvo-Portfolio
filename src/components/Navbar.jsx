@@ -23,6 +23,10 @@ const navLinks = [
     title: "Admin",
     path: "login",
   },
+  {
+    title: "Dashboard",
+    path: "dashboard",
+  },
 ];
 
 const Navbar = () => {
