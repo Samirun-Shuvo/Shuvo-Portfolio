@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
-// import axios from "axios";
+import axios from "axios";
 
 const projectsData = [
   {
@@ -120,7 +120,7 @@ const ProjectsSection = () => {
             transition={{ duration: 0.3, delay: index * 0.4 }}
           >
             <ProjectCard
-              key={project.id}
+              key={project._id}
               title={project.title}
               description={project.description}
               imgUrl={project.image}
