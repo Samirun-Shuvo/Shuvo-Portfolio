@@ -9,23 +9,23 @@ import mylogo from "../../public/images/mylogo.png";
 const navLinks = [
   {
     title: "About",
-    path: "#about",
+    path: "/#about",
   },
   {
     title: "Projects",
-    path: "#projects",
+    path: "/#projects",
   },
   {
     title: "Contact",
-    path: "#contact",
-  },
-  {
-    title: "Admin",
-    path: "login",
+    path: "/#contact",
   },
   {
     title: "Dashboard",
     path: "dashboard",
+  },
+  {
+    title: "Admin_login",
+    path: "login",
   },
 ];
 
