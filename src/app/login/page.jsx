@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./login.module.css";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 const page = () => {
   const {
@@ -12,10 +13,9 @@ const page = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
-      // axios
-      // .get("http://localhost:5000/login")
-      // .then((res) => log(res));
+    axios
+      .post("http://localhost:5000/login", { data })
+      .then((res) => console.log(res));
   };
 
   return (
