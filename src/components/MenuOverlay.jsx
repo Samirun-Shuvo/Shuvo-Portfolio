@@ -9,6 +9,12 @@ const MenuOverlay = ({ links }) => {
           <NavLink href={link.path} title={link.title} />
         </li>
       ))}
+      <li>
+        <NavLink href="/dashboard" title="Dashboard" />
+      </li>
+      <li>
+        <NavLink href="/login" title="Admin-Login" />
+      </li>
     </ul>
   );
 };

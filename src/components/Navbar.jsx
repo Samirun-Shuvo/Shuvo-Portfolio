@@ -6,6 +6,10 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 import Image from "next/image";
 import mylogo from "../../public/images/mylogo.png";
+import { useRouter } from "next/navigation";
+
+const token = localStorage.getItem("token");
+
 const navLinks = [
   {
     title: "About",
@@ -19,18 +23,27 @@ const navLinks = [
     title: "Contact",
     path: "/#contact",
   },
-  {
-    title: "Dashboard",
-    path: "dashboard",
-  },
-  {
-    title: "Admin_login",
-    path: "login",
-  },
+  // {
+  //   title: "Dashboard",
+  //   path: "dashboard",
+  // },
+  // {
+  //   title: "Admin_login",
+  //   path: "login",
+  // },
 ];
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const router = useRouter();
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    // Clear the token from wherever it's stored (e.g., localStorage)
+    localStorage.removeItem("token");
+    // Redirect to home or login page as needed
+    router.push("/");
+  };
 
   return (
     <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
@@ -65,6 +78,27 @@ const Navbar = () => {
                 <NavLink href={link.path} title={link.title} />
               </li>
             ))}
+            {token ? (
+              <>
+                <li>
+                  <NavLink href="/dashboard" title="Dashboard" />
+                </li>
+                <li>
+                  {/* Attach the logout handler */}
+                  <navLink
+                    className="text-white"
+                    href="/"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </navLink>
+                </li>
+              </>
+            ) : (
+              <li>
+                <NavLink href="/login" title="Admin-Login" />
+              </li>
+            )}
           </ul>
         </div>
       </div>

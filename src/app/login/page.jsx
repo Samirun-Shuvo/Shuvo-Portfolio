@@ -4,18 +4,23 @@ import styles from "./login.module.css";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
-const page = () => {
+const Login = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const router = useRouter();
 
   const onSubmit = (data) => {
-    axios
-      .post("http://localhost:5000/login", { data })
-      .then((res) => console.log(res));
+    axios.post("http://localhost:5000/login", { data }).then((res) => {
+      if (res.data.status === "success") {
+        localStorage.setItem("token", res.data.token);
+        router.push("/dashboard");
+      }
+    });
   };
 
   return (
@@ -68,4 +73,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Login;

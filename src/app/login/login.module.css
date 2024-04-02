@@ -7,24 +7,24 @@
   background: #121212;
 }
 .login_container {
-  width: 20%;
   text-align: center;
+  margin-top: 100px;
 }
 .login_form {
   text-align: left;
   padding: 50px 60px;
   overflow: hidden;
   color: #5c5c5c;
-  margin-top: 50px;
+  margin: 50px;
   border: 1px solid rgb(121, 121, 121);
   border-radius: 10px;
   color: gainsboro;
 }
 .login_form form {
-  padding: 20px 0px;
+  padding: 10px 0px;
   overflow: hidden;
   color: #5c5c5c;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 .login_form form input {
   width: 100%;
