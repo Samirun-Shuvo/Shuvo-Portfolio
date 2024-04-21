@@ -56,6 +56,15 @@ import axios from "axios";
 //     gitUrl: "/",
 //     previewUrl: "/",
 //   },
+//     id: 6,
+//     title: "Multivendor Ecommerce Website",
+//     description:
+//       "BPPShop is a multivendor eCommerce platform designed to facilitate a diverse marketplace where multiple independent vendors can sell their products directly to consumers. The platform operates by allowing vendors to set up their own mini-stores within the larger BPPShop website, where they can list their products, manage inventory, and directly engage with customers.",
+//     image: "/images/myprojects/6.png",
+//     tag: ["All", "React"],
+//     gitUrl: "/",
+//     previewUrl: "https://bppshop.com.bd/",
+//   },
 // ];
 
 const ProjectsSection = () => {

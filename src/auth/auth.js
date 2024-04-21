@@ -6,7 +6,7 @@ function useAuth() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     setIsLoggedIn(!!token);
-  }, [isLoggedIn]);
+  }, []);
 
   return isLoggedIn;
 }
