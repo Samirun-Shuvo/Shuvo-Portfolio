@@ -1,14 +1,12 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 import Image from "next/image";
 import mylogo from "../../public/images/mylogo.png";
 import { useRouter } from "next/navigation";
-
-const token = localStorage.getItem("token");
 
 const navLinks = [
   {
@@ -35,7 +33,14 @@ const navLinks = [
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [token, setToken] = useState(null);
   const router = useRouter();
+
+  useEffect(() => {
+    // Only access localStorage on the client side
+    const storedToken = localStorage.getItem("token");
+    setToken(storedToken);
+  }, []);
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -85,13 +90,13 @@ const Navbar = () => {
                 </li>
                 <li>
                   {/* Attach the logout handler */}
-                  <navLink
+                  <NavLink
                     className="text-white"
                     href="/"
                     onClick={handleLogout}
                   >
                     Logout
-                  </navLink>
+                  </NavLink>
                 </li>
               </>
             ) : (
