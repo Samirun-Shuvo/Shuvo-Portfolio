@@ -47,13 +47,25 @@ const ContactSection = () => {
           try my best to get back to you!
         </p>
         <div className="socials flex flex-row items-center justify-start gap-2">
-          <Link href="https://github.com/Samirun-Shuvo">
+          <Link
+            href="https://github.com/Samirun-Shuvo"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Image src={GithubIcon} alt="Github Icon" />
           </Link>
-          <Link href="https://www.linkedin.com/in/md-samirun-shuvo">
+          <Link
+            href="https://www.linkedin.com/in/md-samirun-shuvo"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
           </Link>
-          <Link href="https://www.facebook.com/samirun.shuvo/">
+          <Link
+            href="https://www.facebook.com/samirun.shuvo/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaFacebook size="40px" className="text-white" />
           </Link>
         </div>
@@ -64,7 +76,12 @@ const ContactSection = () => {
             <p className="text-green-500 text-sm mt-2">
               Email sent successfully!
             </p>
-            <button onClick={()=>setEmailSubmitted(false)} className="text-white my-4 bg-gray-800 rounded-md p-2">Send More</button>
+            <button
+              onClick={() => setEmailSubmitted(false)}
+              className="text-white my-4 bg-gray-800 rounded-md p-2"
+            >
+              Send More
+            </button>
           </div>
         ) : (
           <form className="flex flex-col" ref={form} onSubmit={sendEmail}>
