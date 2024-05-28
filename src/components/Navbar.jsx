@@ -21,62 +21,46 @@ const navLinks = [
     title: "Contact",
     path: "/#contact",
   },
-  // {
-  //   title: "Dashboard",
-  //   path: "dashboard",
-  // },
-  // {
-  //   title: "Admin_login",
-  //   path: "login",
-  // },
 ];
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [token, setToken] = useState(null);
+  const [mounted, setMounted] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    // Only access localStorage on the client side
+    setMounted(true); // Indicate that the component has mounted
     const storedToken = localStorage.getItem("token");
     setToken(storedToken);
   }, []);
 
   const handleLogout = (e) => {
     e.preventDefault();
-    // Clear the token from wherever it's stored (e.g., localStorage)
     localStorage.removeItem("token");
-    // Redirect to home or login page as needed
     router.push("/");
   };
+
+  if (!mounted) {
+    // Prevent rendering on the server
+    return null;
+  }
 
   return (
     <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
-        <Link
-          href={"/"}
-          className="text-2xl md:text-5xl text-white font-semibold"
-        >
+        <Link href="/" className="text-2xl md:text-5xl text-white font-semibold">
           <Image src={mylogo} alt="Logo of Me" width={300} />
         </Link>
         <div className="mobile-menu block md:hidden">
-          {!navbarOpen ? (
-            <button
-              onClick={() => setNavbarOpen(true)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
-            >
-              <Bars3Icon className="h-5 w-5" />
-            </button>
-          ) : (
-            <button
-              onClick={() => setNavbarOpen(false)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
-            >
-              <XMarkIcon className="h-5 w-5" />
-            </button>
-          )}
+          <button
+            onClick={() => setNavbarOpen(!navbarOpen)}
+            className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
+          >
+            {navbarOpen ? <XMarkIcon className="h-5 w-5" /> : <Bars3Icon className="h-5 w-5" />}
+          </button>
         </div>
-        <div className="menu hidden md:block md:w-auto" id="navbar">
+        <div className={`menu ${navbarOpen ? 'block' : 'hidden'} md:block md:w-auto`} id="navbar">
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinks.map((link, index) => (
               <li key={index}>
@@ -89,12 +73,7 @@ const Navbar = () => {
                   <NavLink href="/dashboard" title="Dashboard" />
                 </li>
                 <li>
-                  {/* Attach the logout handler */}
-                  <NavLink
-                    className="text-white"
-                    href="/"
-                    onClick={handleLogout}
-                  >
+                  <NavLink className="text-white" href="/" onClick={handleLogout}>
                     Logout
                   </NavLink>
                 </li>
@@ -107,7 +86,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
+      {navbarOpen && <MenuOverlay links={navLinks} />}
     </nav>
   );
 };

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import heroImg from "../../public/images/myHeroImg.png"; 
+import heroImg from "../../public/images/myHeroImg.png";
 
 const HeroSection = () => {
   return (
@@ -21,7 +21,7 @@ const HeroSection = () => {
               Hello, I&apos;m <br />
               Md. Samirun Shuvo
             </span>
-            <br></br>
+            <br />
             <TypeAnimation
               sequence={["Web Developer", 1000, "Software Engineer", 1000]}
               wrapper="span"
@@ -47,7 +47,6 @@ const HeroSection = () => {
 
             <Link
               href="/images/cv/resume.pdf"
-              // target="_blank"
               className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
               download="shuvo_cv.pdf"
             >
@@ -66,7 +65,7 @@ const HeroSection = () => {
           <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative overflow-hidden">
             <Image
               src={heroImg}
-              alt="hero image"
+              alt="Hero image"
               className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-95"
               width={350}
               height={350}
