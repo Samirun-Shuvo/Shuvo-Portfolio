@@ -26,31 +26,30 @@ const navLinks = [
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [token, setToken] = useState(null);
-  const [mounted, setMounted] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    setMounted(true); // Indicate that the component has mounted
-    const storedToken = localStorage.getItem("token");
-    setToken(storedToken);
+    // Ensure the component is only using client-side localStorage
+    if (typeof window !== "undefined") {
+      const storedToken = localStorage.getItem("token");
+      setToken(storedToken);
+    }
   }, []);
 
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.removeItem("token");
+    setToken(null);
     router.push("/");
   };
-
-  if (!mounted) {
-    // Prevent rendering on the server
-    return null;
-  }
 
   return (
     <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link href="/" className="text-2xl md:text-5xl text-white font-semibold">
-          <Image src={mylogo} alt="Logo of Me" width={300} />
+          <div className="cursor-pointer">
+            <Image src={mylogo} alt="Logo of Me" width={200} priority />
+          </div>
         </Link>
         <div className="mobile-menu block md:hidden">
           <button
@@ -73,9 +72,12 @@ const Navbar = () => {
                   <NavLink href="/dashboard" title="Dashboard" />
                 </li>
                 <li>
-                  <NavLink className="text-white" href="/" onClick={handleLogout}>
+                  <button
+                    className="text-white"
+                    onClick={handleLogout}
+                  >
                     Logout
-                  </NavLink>
+                  </button>
                 </li>
               </>
             ) : (

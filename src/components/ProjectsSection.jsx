@@ -3,7 +3,6 @@ import React, { useState, useRef, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
-import axios from "axios";
 
 const projectsData = [
   {
@@ -66,6 +65,16 @@ const projectsData = [
     gitUrl: "/",
     previewUrl: "https://bppshop.com.bd/",
   },
+  {
+    id: 7,
+    title: "Doctor-Portals",
+    description:
+      "Doctor-Portals is a web application designed to streamline and enhance the interaction between patients and healthcare providers. This system provides a centralized platform for managing appointments, patient records, billing, and more, thereby improving efficiency and patient satisfaction in healthcare facilities.",
+    image: "/images/myprojects/7.png",
+    tag: ["All", "MERN"],
+    gitUrl: "/",
+    previewUrl: "https://doctor-portals-client.vercel.app",
+  },
 ];
 
 const ProjectsSection = () => {
@@ -76,7 +85,7 @@ const ProjectsSection = () => {
 
   // useEffect(() => {
   //   axios
-  //     .get("http://localhost:5000/projects")
+  //     .get(`http://localhost:5000/projects`)
   //     .then((res) => setProjectsData(res.data));
   // }, []);
 
@@ -113,6 +122,11 @@ const ProjectsSection = () => {
           onClick={handleTagChange}
           name="Next"
           isSelected={tag === "Next"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="MERN"
+          isSelected={tag === "MERN"}
         />
         <ProjectTag
           onClick={handleTagChange}

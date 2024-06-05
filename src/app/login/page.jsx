@@ -14,15 +14,23 @@ const Login = () => {
   } = useForm();
   const router = useRouter();
 
-  const onSubmit = (data) => {
-    axios.post("http://localhost:5000/login", { data }).then((res) => {
+  const onSubmit = async (data) => {
+    try {
+      const res = await axios.post("http://localhost:5000/login", { data });
       if (res.data.status === "success") {
-        localStorage.setItem("token", res.data.token);
+        const token = await res.data.token;
+        await localStorage.setItem("token", token);
         router.push("/dashboard");
+      } else {
+        // Handle error case if status is not "success"
+        console.error("Login failed:", res.data.message);
       }
-    });
+    } catch (error) {
+      // Handle any errors that occur during the request
+      console.error("An error occurred:", error);
+    }
   };
-
+  
   return (
     <>
       <div className={styles.login_section}>
