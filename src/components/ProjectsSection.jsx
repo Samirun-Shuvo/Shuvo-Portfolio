@@ -85,6 +85,36 @@ const projectsData = [
     gitUrl: "/",
     previewUrl: "https://bistro-boss-a537a.firebaseapp.com",
   },
+  {
+    id: 9,
+    title: "TCB-Sheba",
+    description:
+      "TCB Sheba: A government-backed platform ensuring affordable and accessible essential goods for underprivileged communities, empowering individuals through transparent and efficient product distribution.",
+    image: "/images/myprojects/9.png",
+    tag: ["All", "React"],
+    gitUrl: "/",
+    previewUrl: "https://tcb-sheba.netlify.app",
+  },
+  {
+    id: 10,
+    title: "Kabbik-Furniture-Shop",
+    description:
+      "Kabbik Furniture Shop: A modern e-commerce platform offering high-quality, stylish furniture with seamless online shopping and personalized customer service.",
+    image: "/images/myprojects/10.png",
+    tag: ["All", "React"],
+    gitUrl: "/",
+    previewUrl: "https://kabbik-furniture-shop.netlify.app",
+  },
+  {
+    id: 11,
+    title: "Spellbound-Book-Store",
+    description:
+      "Spellbound Book Store: A captivating online store providing a diverse collection of cource books, offering readers a magical shopping experience with easy navigation and quick delivery.",
+    image: "/images/myprojects/11.png",
+    tag: ["All", "React"],
+    gitUrl: "/",
+    previewUrl: "https://spellbound-book-store-task.vercel.app",
+  },
 ];
 
 const ProjectsSection = () => {
