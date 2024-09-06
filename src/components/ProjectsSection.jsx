@@ -75,19 +75,22 @@ const projectsData = [
     gitUrl: "/",
     previewUrl: "https://doctor-portals-client.vercel.app",
   },
+  {
+    id: 8,
+    title: "Bistro-Boss-Restaurant",
+    description:
+      "Bistro Boss Restaurant: A full-stack MERN application offering a seamless user experience for browsing, ordering, and managing restaurant services with secure admin controls and real-time updates.",
+    image: "/images/myprojects/8.png",
+    tag: ["All", "MERN"],
+    gitUrl: "/",
+    previewUrl: "https://bistro-boss-a537a.firebaseapp.com",
+  },
 ];
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  // const [projectsData, setProjectsData] = useState([]);
-
-  // useEffect(() => {
-  //   axios
-  //     .get(`http://localhost:5000/projects`)
-  //     .then((res) => setProjectsData(res.data));
-  // }, []);
 
   const handleTagChange = (newTag) => {
     setTag(newTag);

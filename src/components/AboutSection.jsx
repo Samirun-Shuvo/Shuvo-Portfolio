@@ -11,11 +11,11 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-2">
         <li>
-          2022 to Present
+          May-2022 to May-2024
           <ul>
             <li>
               <Link href="https://excelitai.com">
-                <strong className="text-[gray]">Excel IT AI</strong>
+                <strong className="text-[gray]">Excel IT AI Ltd.</strong>
               </Link>
             </li>
             <li>Software Engnineer</li>
