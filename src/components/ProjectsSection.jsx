@@ -115,6 +115,16 @@ const projectsData = [
     gitUrl: "/",
     previewUrl: "https://spellbound-book-store-task.vercel.app",
   },
+  {
+    id: 12,
+    title: "Pixel Froge",
+    description:
+      "Pixel Froge uses AI to bring your creative ideas to life. Just type in your vision, and let our AI transform it into a stunning painting.Art Created by You, Enhanced by AI",
+    image: "/images/myprojects/12.png",
+    tag: ["All", "AI"],
+    gitUrl: "/",
+    previewUrl: "https://texttopaintimageaiclient.vercel.app",
+  },
 ];
 
 const ProjectsSection = () => {
@@ -160,6 +170,11 @@ const ProjectsSection = () => {
           onClick={handleTagChange}
           name="MERN"
           isSelected={tag === "MERN"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="AI"
+          isSelected={tag === "AI"}
         />
         <ProjectTag
           onClick={handleTagChange}
