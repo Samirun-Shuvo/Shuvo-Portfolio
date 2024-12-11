@@ -11,7 +11,7 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-2">
         <li>
-          May-2022 to May-2024
+          May-2022 to Present
           <ul>
             <li>
               <Link href="https://excelitai.com">
@@ -29,15 +29,31 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>React</li>
-        <li>Next</li>
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>MongoDB</li>
-        <li>MySQL</li>
+        <li>
+          <b>Languages :</b> JavaScript (ES6+), HTML5, CSS3
+        </li>
+        <li>
+          <b>Frameworks/Libraries :</b> React.js, Next.js, Node.js, Express.js
+        </li>
+        <li>
+          <b>State Management :</b> Redux
+        </li>
+        <li>
+          <b>Styling Tools :</b> Tailwind CSS, Bootstrap
+        </li>
+        <li>
+          <b>Databases :</b> MongoDB, MySQL
+        </li>
+        <li>
+          <b>Testing & Debugging :</b> Jest, Postman
+        </li>
+        <li>
+          <b>Version Control :</b> Git, GitHub, GitLab
+        </li>
+        <li>
+          <b>Other Skills:</b> REST APIs, Firebase, JWT Authentication, npm,
+          Postman, cPanel, AWS, and various other useful libraries and tools.
+        </li>
       </ul>
     ),
   },
